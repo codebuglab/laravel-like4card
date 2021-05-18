@@ -24,5 +24,3 @@ Homestead.json
 
 .DS_Store
 composer.lock
-src/Http
-src/Like4Card.php

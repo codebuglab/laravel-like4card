@@ -97,12 +97,12 @@ $response = Like4Card::categories();
 
 ### Products by products ids
 
+**There's an issue in API request param: This will only get the first ID**
+
 Operation to get all products available by an array of products identifiers.
 
 ```php
-$product_ids = [1, 2, 3];
-$response = Like4Card::products()->get($product_ids);
-// or
+$product_ids = [1, 2, 3]; // required products ids
 $response = Like4Card::products($product_ids);
 ```
 
@@ -142,7 +142,7 @@ Operation to get all products available by category id.
 
 ```php
 $category_id = 1;
-$response = Like4Card::products()->getByCategoryId($category_id);
+$response = Like4Card::getProductsByCategoryId($category_id);
 ```
 
 `$response` is an Object with the following parameters
@@ -151,29 +151,6 @@ $response = Like4Card::products()->getByCategoryId($category_id);
 | :-------- | :------------------------------------------------- |
 | response  | 1 for success, 0 for failure                       |
 | data      | array of objects, each object represents a product |
-
-**Every product has**
-
-| Parameter             | Description                                                                        |
-| :-------------------- | :--------------------------------------------------------------------------------- |
-| productPrice          | that represents the product price including vat that the merchant paid for product |
-| sellPrice             | that represents the price the customer pays for the product to the merchant.       |
-| available             | determines if stock for this product is available or not.                          |
-| optionalFieldsExist   | 1 optional fields required, 0 there are no required optional fields.               |
-| productOptionalFields | array of optional fields where                                                     |
-
-**Each optional field has**
-
-| Parameter    | Description                                                           |
-| :----------- | :-------------------------------------------------------------------- |
-| id           | identifier of the optional field                                      |
-| required     | '1' means it's required, '0' means it's optional and not required     |
-| defaultValue | default value for this field                                          |
-| hint         | placeholder for this field                                            |
-| label        | label displayed on top of this field on UI                            |
-| fieldTypeId  | 1 plaintext ,7 email address, 10 phone number ,other number plaintext |
-| fieldCode    |                                                                       |
-| options      | array of choices in case option is multi choice field                 |
 
 ### Get all orders
 
@@ -190,7 +167,7 @@ Operation to get all orders made by this merchant. This api can receive the foll
 // all options are not required
 $options = [
   'page' => 1,
-  'order_type' => 'asc',
+  'orderType' => 'asc',
   'from' => 1621327053,
   'to' => 1623998253
 ];
@@ -241,12 +218,10 @@ Operation to create new order. This api can receive the following parameters:
 | quantity     | always 1                                             |
 
 ```php
-$order = [
-  'product_id' => 1,
-  'reference_id' => 123, // the id from your local orders table
-  'quantity' => 1
-];
-$response = Like4Card::createOrder($order);
+$product_id = 1;
+$local_id = 123; // the id from your local orders table
+
+$response = Like4Card::createOrder($product_id, $local_id);
 ```
 
 `$response` is an Object with the following parameters
