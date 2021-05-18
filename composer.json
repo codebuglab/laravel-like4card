@@ -28,11 +28,20 @@
       "Akhaled\\Like4Card\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Akhaled\\Like4Card\\Tests\\": "tests/"
+    }
+  },
   "extra": {
     "laravel": {
       "providers": [
         "Akhaled\\Like4Card\\Like4CardServiceProvider"
       ]
     }
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.0",
+    "phpunit/phpunit": "^9.5"
   }
 }

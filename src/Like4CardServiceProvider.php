@@ -1,6 +1,6 @@
 <?php
 
-namespace AKhaled\Like4Card;
+namespace Akhaled\Like4Card;
 
 use Illuminate\Support\ServiceProvider;
 

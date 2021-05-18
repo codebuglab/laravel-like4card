@@ -65,7 +65,7 @@ The config file looks like
 Operation that help the merchant to get his balance and user Id.
 
 ```php
-$response = Like4Card::check_balance();
+$response = Like4Card::checkBalance();
 ```
 
 `$response` is an Object with the following parameters
