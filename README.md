@@ -7,7 +7,7 @@ Integrate [Like4Card](http://like4card.com/) api with Laravel.
 - [Installation](#installation)
 - [Config](#config)
 - [Available api methods](#available-api-methods)
-  - [Check balance](#check-balance)
+  - [Get merchant balance](#get-merchant-balance)
   - [Categories](#categories)
   - [Products by products ids](#products-by-products-ids)
   - [Products by category](#products-by-category)
@@ -60,12 +60,12 @@ The config file looks like
 
 ## Available api methods
 
-### Check balance
+### Get merchant balance
 
 Operation that help the merchant to get his balance and user Id.
 
 ```php
-$response = Like4Card::checkBalance();
+$response = Like4Card::balance();
 ```
 
 `$response` is an Object with the following parameters

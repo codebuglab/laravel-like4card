@@ -4,7 +4,7 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | Life4Card Default Order Model
+    | Like4Card Default Order Model
     |--------------------------------------------------------------------------
     |
     | This option defines the default Order model.
@@ -17,10 +17,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Life4Card auth info
+    | Like4Card auth info
     |--------------------------------------------------------------------------
     |
-    | This is your Life4Card info to make auth request.
+    | This is your Like4Card info to make auth request.
     |
     */
 
