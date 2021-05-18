@@ -21,3 +21,8 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+
+.DS_Store
+composer.lock
+src/Http
+src/Like4Card.php

@@ -1,0 +1,38 @@
+{
+  "name": "akhaled/laravel-like4card",
+  "description": "Integrate Like4Card API with Laravel",
+  "license": "MIT",
+  "keywords": [
+    "like4card",
+    "gateway",
+    "online",
+    "api",
+    "php",
+    "laravel",
+    "egypt",
+    "ksa"
+  ],
+  "homepage": "https://github.com/akhled/laravel-like4card",
+  "authors": [
+    {
+      "name": "Amro Khaled",
+      "email": "i@akhaled.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "illuminate/support": ">=6.20"
+  },
+  "autoload": {
+    "psr-4": {
+      "Akhaled\\Like4Card\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Akhaled\\Like4Card\\Like4CardServiceProvider"
+      ]
+    }
+  }
+}
