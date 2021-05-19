@@ -21,16 +21,15 @@ Integrate [Like4Card](http://like4card.com/) api with Laravel.
 Require via composer
 
 ```bash
-composer require akhaled/laravel-like4card
+composer require codebuglab/laravel-like4card
 ```
 
 In `config/app.php` file
 
 ```php
 'providers' => [
-    ...
-    Akhaled\Like4Card\Like4CarderviceProvider::class,
-    ...
+  ...
+  CodeBugLab\Like4Card\Like4CardServiceProvider::class,
 ];
 ```
 

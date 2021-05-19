@@ -1,8 +1,8 @@
 <?php
 
-namespace Akhaled\Like4Card\Tests\Mock;
+namespace CodeBugLab\Like4Card\Tests\Mock;
 
-use Akhaled\Like4Card\Contracts\Like4CardInterface;
+use CodeBugLab\Like4Card\Contracts\Like4CardInterface;
 
 class Like4CardAPIMock implements Like4CardInterface
 {

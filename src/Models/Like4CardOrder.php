@@ -1,11 +1,11 @@
 <?php
 
-namespace Akhaled\Like4Card\Models;
+namespace CodeBugLab\Like4Card\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Akhaled\Like4Card\Database\Factories\Like4CardOrderFactory as OrderFactory;
-use Akhaled\Like4Card\Models\Like4CardSerial as Serial;
+use CodeBugLab\Like4Card\Database\Factories\Like4CardOrderFactory as OrderFactory;
+use CodeBugLab\Like4Card\Models\Like4CardSerial as Serial;
 
 class Like4CardOrder extends Model
 {

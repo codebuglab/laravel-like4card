@@ -1,11 +1,11 @@
 <?php
 
-namespace Akhaled\Like4Card\Tests;
+namespace CodeBugLab\Like4Card\Tests;
 
-use Akhaled\Like4Card\Services\Like4CardAPI;
-use Akhaled\Like4Card\Like4CardServiceProvider;
+use CodeBugLab\Like4Card\Services\Like4CardAPI;
+use CodeBugLab\Like4Card\Like4CardServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Akhaled\Like4Card\Tests\Mock\Like4CardAPIMock;
+use CodeBugLab\Like4Card\Tests\Mock\Like4CardAPIMock;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithContainer;
 

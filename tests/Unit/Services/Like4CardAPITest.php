@@ -1,8 +1,8 @@
 <?php
 
-namespace Akhaled\Like4Card\Tests\Unit\Services;
+namespace CodeBugLab\Like4Card\Tests\Unit\Services;
 
-use Akhaled\Like4Card\Tests\TestCase;
+use CodeBugLab\Like4Card\Tests\TestCase;
 
 class Like4CardAPITest extends TestCase
 {

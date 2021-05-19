@@ -1,9 +1,9 @@
 <?php
 
-namespace Akhaled\Like4Card\Tests\Feature;
+namespace CodeBugLab\Like4Card\Tests\Feature;
 
-use Akhaled\Like4Card\Models\Like4CardCategory as Category;
-use Akhaled\Like4Card\Tests\TestCase;
+use CodeBugLab\Like4Card\Models\Like4CardCategory as Category;
+use CodeBugLab\Like4Card\Tests\TestCase;
 
 class CategoriesRequestsTest extends TestCase
 {

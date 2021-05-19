@@ -1,12 +1,12 @@
 <?php
 
-namespace Akhaled\Like4Card\Tests\Unit\Models;
+namespace CodeBugLab\Like4Card\Tests\Unit\Models;
 
-use Akhaled\Like4Card\Tests\TestCase;
-use Akhaled\Like4Card\Models\Like4CardOrder as Order;
-use Akhaled\Like4Card\Models\Like4CardSerial as Serial;
-use Akhaled\Like4Card\Models\Like4CardProduct as Product;
-use Akhaled\Like4Card\Models\Like4CardCategory as Category;
+use CodeBugLab\Like4Card\Tests\TestCase;
+use CodeBugLab\Like4Card\Models\Like4CardOrder as Order;
+use CodeBugLab\Like4Card\Models\Like4CardSerial as Serial;
+use CodeBugLab\Like4Card\Models\Like4CardProduct as Product;
+use CodeBugLab\Like4Card\Models\Like4CardCategory as Category;
 
 class OrderTest extends TestCase
 {

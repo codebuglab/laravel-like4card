@@ -1,5 +1,5 @@
 {
-  "name": "akhaled/laravel-like4card",
+  "name": "codebuglab/laravel-like4card",
   "description": "Integrate Like4Card API with Laravel",
   "license": "MIT",
   "keywords": [
@@ -26,19 +26,19 @@
   },
   "autoload": {
     "psr-4": {
-      "Akhaled\\Like4Card\\": "src/",
-      "Akhaled\\Like4Card\\Database\\Factories\\": "database/factories"
+      "CodeBugLab\\Like4Card\\": "src/",
+      "CodeBugLab\\Like4Card\\Database\\Factories\\": "database/factories"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Akhaled\\Like4Card\\Tests\\": "tests/"
+      "CodeBugLab\\Like4Card\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Akhaled\\Like4Card\\Like4CardServiceProvider"
+        "CodeBugLab\\Like4Card\\Like4CardServiceProvider"
       ]
     }
   },

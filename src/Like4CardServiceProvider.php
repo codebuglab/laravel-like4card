@@ -1,10 +1,10 @@
 <?php
 
-namespace Akhaled\Like4Card;
+namespace CodeBugLab\Like4Card;
 
 use Illuminate\Support\ServiceProvider;
-use Akhaled\Like4Card\Services\Like4CardAPI;
-use Akhaled\Like4Card\Contracts\Like4CardInterface;
+use CodeBugLab\Like4Card\Services\Like4CardAPI;
+use CodeBugLab\Like4Card\Contracts\Like4CardInterface;
 
 class Like4CardServiceProvider extends ServiceProvider
 {

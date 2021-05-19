@@ -1,6 +1,6 @@
 <?php
 
-namespace Akhaled\Like4Card\Contracts;
+namespace CodeBugLab\Like4Card\Contracts;
 
 interface Like4CardInterface
 {

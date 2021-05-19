@@ -1,8 +1,8 @@
 <?php
 
-namespace Akhaled\Like4Card\Database\Factories;
+namespace CodeBugLab\Like4Card\Database\Factories;
 
-use Akhaled\Like4Card\Models\Like4CardCategory;
+use CodeBugLab\Like4Card\Models\Like4CardCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class Like4CardCategoryFactory extends Factory

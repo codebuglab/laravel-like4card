@@ -1,10 +1,10 @@
 <?php
 
-namespace Akhaled\Like4Card\Tests\Feature;
+namespace CodeBugLab\Like4Card\Tests\Feature;
 
-use Akhaled\Like4Card\Tests\TestCase;
-use Akhaled\Like4Card\Models\Like4CardOrder as Order;
-use Akhaled\Like4Card\Models\Like4CardSerial as Serial;
+use CodeBugLab\Like4Card\Tests\TestCase;
+use CodeBugLab\Like4Card\Models\Like4CardOrder as Order;
+use CodeBugLab\Like4Card\Models\Like4CardSerial as Serial;
 
 class OrdersRequestsTest extends TestCase
 {

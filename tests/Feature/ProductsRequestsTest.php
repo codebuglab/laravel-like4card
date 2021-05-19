@@ -1,10 +1,10 @@
 <?php
 
-namespace Akhaled\Like4Card\Tests\Feature;
+namespace CodeBugLab\Like4Card\Tests\Feature;
 
-use Akhaled\Like4Card\Tests\TestCase;
-use Akhaled\Like4Card\Models\Like4CardProduct as Product;
-use Akhaled\Like4Card\Models\Like4CardCategory as Category;
+use CodeBugLab\Like4Card\Tests\TestCase;
+use CodeBugLab\Like4Card\Models\Like4CardProduct as Product;
+use CodeBugLab\Like4Card\Models\Like4CardCategory as Category;
 
 class ProductsRequestsTest extends TestCase
 {

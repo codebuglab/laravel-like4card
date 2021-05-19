@@ -1,9 +1,9 @@
 <?php
 
-namespace Akhaled\Like4Card\Database\Factories;
+namespace CodeBugLab\Like4Card\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Akhaled\Like4Card\Models\Like4CardOrder as Order;
+use CodeBugLab\Like4Card\Models\Like4CardOrder as Order;
 
 class Like4CardOrderFactory extends Factory
 {

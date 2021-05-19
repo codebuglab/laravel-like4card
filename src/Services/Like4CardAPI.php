@@ -7,10 +7,10 @@
  * @license MIT
  */
 
-namespace Akhaled\Like4Card\Services;
+namespace CodeBugLab\Like4Card\Services;
 
 use Illuminate\Support\Carbon;
-use Akhaled\Like4Card\Contracts\Like4CardInterface;
+use CodeBugLab\Like4Card\Contracts\Like4CardInterface;
 
 class Like4CardAPI implements Like4CardInterface
 {
