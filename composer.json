@@ -26,7 +26,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Akhaled\\Like4Card\\": "src/"
+      "Akhaled\\Like4Card\\": "src/",
+      "Akhaled\\Like4Card\\Database\\Factories\\": "database/factories"
     }
   },
   "autoload-dev": {

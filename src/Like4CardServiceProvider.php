@@ -13,6 +13,8 @@ class Like4CardServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/config/like4card.php' => config_path('like4card.php'),
         ]);
+
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
     }
 
     public function register()
@@ -22,5 +24,6 @@ class Like4CardServiceProvider extends ServiceProvider
         $this->app->bind(Like4CardInterface::class, function () {
             return new Like4CardAPI();
         });
+
     }
 }
