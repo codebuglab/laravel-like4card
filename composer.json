@@ -21,6 +21,7 @@
   ],
   "require": {
     "php": ">=7.0",
+    "illuminate/database": ">=6.20",
     "illuminate/support": ">=6.20"
   },
   "autoload": {
