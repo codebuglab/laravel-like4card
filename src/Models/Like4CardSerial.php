@@ -15,12 +15,11 @@ class Like4CardSerial extends Model
     protected $guarded = [];
 
     /**
-     * decrypting the `serialCode` in php
+     * decrypting the `serialCode`
      *
-     * @param string $encrypted_txt
      * @return string
      */
-    public static function decryptSerial(string $encrypted_txt)
+    public function decryptSerialCode()
     {
         $secret_key = 't-3zafRa';
         $secret_iv = 'St@cE4eZ';
@@ -30,7 +29,7 @@ class Like4CardSerial extends Model
         //iv - encrypt method AES-256-CBC expects 16 bytes - else you will get a warning
         $iv = substr(hash('sha256', $secret_iv), 0, 16);
 
-        return openssl_decrypt(base64_decode($encrypted_txt), $encrypt_method, $key, 0, $iv);
+        return openssl_decrypt(base64_decode($this->serial_code), $encrypt_method, $key, 0, $iv);
     }
 
     public function product()

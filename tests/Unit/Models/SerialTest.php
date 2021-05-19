@@ -53,4 +53,17 @@ class SerialTest extends TestCase
                 ->name
         );
     }
+
+    public function test_it_decrypt_serial_code()
+    {
+        $serial = Serial::factory()->create([
+            'serial_code' => "U0IycUdUWktsL25UaGhOc2JBMmtTUT09",
+            'like4_card_order_id' => Order::factory()->create()->id,
+            'like4_card_product_id' => Product::factory()->create([
+                'like4_card_category_id' => Category::factory()->create()->id,
+            ])->id
+        ]);
+
+        $this->assertEquals("J43azsDBUZch", $serial->decryptSerialCode());
+    }
 }
