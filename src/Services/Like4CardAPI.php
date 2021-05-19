@@ -7,9 +7,11 @@
  * @license MIT
  */
 
-namespace Akhaled\Like4Card;
+namespace Akhaled\Like4Card\Services;
 
-class Like4Card implements Like4CardInterface
+use Akhaled\Like4Card\Contracts\Like4CardInterface;
+
+class Like4CardAPI implements Like4CardInterface
 {
     /**
      * Like4Card base API url
@@ -183,6 +185,12 @@ class Like4Card implements Like4CardInterface
         );
     }
 
+    /**
+     * Api requires hash to be passed with new order
+     *
+     * @param int $time
+     * @return string
+     */
     private static function generateHash($time)
     {
         $email = strtolower(config('like4card.email'));

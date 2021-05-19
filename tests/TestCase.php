@@ -2,10 +2,10 @@
 
 namespace Akhaled\Like4Card\Tests;
 
-use Akhaled\Like4Card\Like4Card;
+use Akhaled\Like4Card\Services\Like4CardAPI;
 use Akhaled\Like4Card\Like4CardServiceProvider;
-use Akhaled\Like4Card\Tests\Mock\Like4CardMock;
 use Orchestra\Testbench\TestCase as BaseTestCase;
+use Akhaled\Like4Card\Tests\Mock\Like4CardAPIMock;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithContainer;
 
 class TestCase extends BaseTestCase
@@ -30,6 +30,6 @@ class TestCase extends BaseTestCase
 
     protected function fakeLike4Card()
     {
-        return $this->swap(Like4Card::class, new Like4CardMock());
+        return $this->swap(Like4CardAPI::class, new Like4CardAPIMock());
     }
 }

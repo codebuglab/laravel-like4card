@@ -3,6 +3,8 @@
 namespace Akhaled\Like4Card;
 
 use Illuminate\Support\ServiceProvider;
+use Akhaled\Like4Card\Services\Like4CardAPI;
+use Akhaled\Like4Card\Contracts\Like4CardInterface;
 
 class Like4CardServiceProvider extends ServiceProvider
 {
@@ -18,7 +20,7 @@ class Like4CardServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../config/like4card.php', 'like4card');
 
         $this->app->bind(Like4CardInterface::class, function () {
-            return new Like4Card();
+            return new Like4CardAPI();
         });
     }
 }
