@@ -15,8 +15,8 @@ class CreateLike4CardSerialsTable extends Migration
     {
         Schema::create('like4_card_serials', function (Blueprint $table) {
             $table->id();
-            $table->integer("order_id")->unsigned();
-            $table->integer("product_id")->unsigned();
+            $table->integer("like4_card_order_id")->unsigned();
+            $table->integer("like4_card_product_id")->unsigned();
             $table->integer("serial_id");
             $table->string("serial_code");
             $table->string("serial_number")->nullable();
@@ -25,8 +25,8 @@ class CreateLike4CardSerialsTable extends Migration
         });
 
         Schema::table('like4_card_serials', function (Blueprint $table) {
-            $table->foreign('order_id')->references('id')->on('like4_card_orders');
-            $table->foreign('product_id')->references('id')->on('like4_card_products');
+            $table->foreign('like4_card_order_id')->references('id')->on('like4_card_orders');
+            $table->foreign('like4_card_product_id')->references('id')->on('like4_card_products');
         });
     }
 
