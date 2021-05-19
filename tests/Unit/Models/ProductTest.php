@@ -22,11 +22,6 @@ class ProductTest extends TestCase
         $category = $categories->first();
         $first_product = $category->products()->first();
 
-        $this->assertDatabaseHas('like4_card_products', [
-            'name' => $first_product->name,
-            'like4_card_category_id' => $category->id,
-        ]);
-
         $this->assertEquals(
             Product::find($first_product->id)->first()->category->id,
             $category->id

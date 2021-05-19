@@ -21,7 +21,7 @@ class CategoriesRequestsTest extends TestCase
         ]);
 
         $this->assertDatabaseHas('like4_card_categories', [
-            'name' => $category->categoryName
+            'name' => "iTunes"
         ]);
     }
 
@@ -36,13 +36,14 @@ class CategoriesRequestsTest extends TestCase
         $category = $categories->data[0];
 
         Category::create([
+            'id' => $category->id,
             'name' => $category->categoryName,
             'image' => $category->amazonImage,
             'parent_id' => $parent_category->id
         ]);
 
         $this->assertDatabaseHas('like4_card_categories', [
-            'name' => $category->categoryName,
+            'name' => "iTunes",
             'parent_id' => $parent_category->id
         ]);
     }
