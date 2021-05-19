@@ -2,7 +2,7 @@
 
 namespace Akhaled\Like4Card\Tests\Unit\Models;
 
-use Akhaled\Like4Card\Models\Category;
+use Akhaled\Like4Card\Models\Like4CardCategory as Category;
 use Akhaled\Like4Card\Tests\TestCase;
 
 class CategoryTest extends TestCase

@@ -5,9 +5,9 @@ namespace Akhaled\Like4Card\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Akhaled\Like4Card\Database\Factories\CategoryFactory;
+use Akhaled\Like4Card\Database\Factories\Like4CardCategoryFactory;
 
-class Category extends Model
+class Like4CardCategory extends Model
 {
     use HasFactory;
 
@@ -20,11 +20,11 @@ class Category extends Model
 
     protected static function newFactory()
     {
-        return CategoryFactory::new();
+        return Like4CardCategoryFactory::new();
     }
 
     public function children()
     {
-        return $this->hasMany(Category::class, 'parent_id', 'id');
+        return $this->hasMany(Like4CardCategory::class, 'parent_id', 'id');
     }
 }

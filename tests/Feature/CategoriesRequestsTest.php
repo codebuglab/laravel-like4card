@@ -2,7 +2,7 @@
 
 namespace Akhaled\Like4Card\Tests\Feature;
 
-use Akhaled\Like4Card\Models\Category;
+use Akhaled\Like4Card\Models\Like4CardCategory as Category;
 use Akhaled\Like4Card\Tests\TestCase;
 
 class CategoriesRequestsTest extends TestCase
@@ -20,7 +20,7 @@ class CategoriesRequestsTest extends TestCase
             'image' => $category->amazonImage
         ]);
 
-        $this->assertDatabaseHas('categories', [
+        $this->assertDatabaseHas('like4_card_categories', [
             'name' => $category->categoryName
         ]);
     }
@@ -41,7 +41,7 @@ class CategoriesRequestsTest extends TestCase
             'parent_id' => $parent_category->id
         ]);
 
-        $this->assertDatabaseHas('categories', [
+        $this->assertDatabaseHas('like4_card_categories', [
             'name' => $category->categoryName,
             'parent_id' => $parent_category->id
         ]);
