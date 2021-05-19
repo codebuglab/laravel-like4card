@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSerialsTable extends Migration
+class CreateLike4CardSerialsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSerialsTable extends Migration
      */
     public function up()
     {
-        Schema::create('serials', function (Blueprint $table) {
+        Schema::create('like4_card_serials', function (Blueprint $table) {
             $table->id();
             $table->integer("order_id")->unsigned();
             $table->integer("product_id")->unsigned();
@@ -24,9 +24,9 @@ class CreateSerialsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('serials', function (Blueprint $table) {
-            $table->foreign('order_id')->references('id')->on('orders');
-            $table->foreign('product_id')->references('id')->on('products');
+        Schema::table('like4_card_serials', function (Blueprint $table) {
+            $table->foreign('order_id')->references('id')->on('like4_card_orders');
+            $table->foreign('product_id')->references('id')->on('like4_card_products');
         });
     }
 
@@ -37,6 +37,6 @@ class CreateSerialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('serials');
+        Schema::dropIfExists('like4_card_serials');
     }
 }
