@@ -199,23 +199,4 @@ class Like4CardAPI implements Like4CardInterface
         $key = '8Tyr4EDw!2sN';
         return hash('sha256', $time . $email . $phone . $key);
     }
-
-    /**
-     * decrypting the `serialCode` in php
-     *
-     * @param string $encrypted_txt
-     * @return string
-     */
-    private static function decryptSerial(string $encrypted_txt)
-    {
-        $secret_key = 't-3zafRa';
-        $secret_iv = 'St@cE4eZ';
-        $encrypt_method = 'AES-256-CBC';
-        $key = hash('sha256', $secret_key);
-
-        //iv - encrypt method AES-256-CBC expects 16 bytes - else you will get a warning
-        $iv = substr(hash('sha256', $secret_iv), 0, 16);
-
-        return openssl_decrypt(base64_decode($encrypted_txt), $encrypt_method, $key, 0, $iv);
-    }
 }

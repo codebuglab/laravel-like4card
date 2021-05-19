@@ -16,9 +16,9 @@ class CreateLike4CardOrdersTable extends Migration
         Schema::create('like4_card_orders', function (Blueprint $table) {
             $table->id();
             $table->integer("order_number");
-            $table->integer("final_total");
+            $table->integer("total");
             $table->string("currency");
-            $table->string("create_date");
+            $table->string("like4_card_create_date");
             $table->string("payment_method")->nullable();
             $table->string("current_status");
             $table->timestamps();

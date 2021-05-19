@@ -18,9 +18,9 @@ class OrdersRequestsTest extends TestCase
 
         Order::create([
             "order_number" => $order->orderNumber,
-            "final_total" => $order->orderFinalTotal,
+            "total" => $order->orderFinalTotal,
             "currency" => $order->currencySymbol,
-            "create_date" => $order->orderCreateDate,
+            "like4_card_create_date" => $order->orderCreateDate,
             "payment_method" => $order->orderPaymentMethod,
             "current_status" => $order->orderCurrentStatus,
         ]);
@@ -38,9 +38,9 @@ class OrdersRequestsTest extends TestCase
 
         $db_order_model = Order::create([
             "order_number" => $order->orderNumber,
-            "final_total" => $order->orderFinalTotal,
+            "total" => $order->orderFinalTotal,
             "currency" => $order->currencySymbol,
-            "create_date" => $order->orderCreateDate,
+            "like4_card_create_date" => $order->orderCreateDate,
             "payment_method" => $order->orderPaymentMethod,
             "current_status" => $order->orderCurrentStatus,
         ]);
