@@ -14,8 +14,8 @@ class CreateLike4CardProductsTable extends Migration
     public function up()
     {
         Schema::create('like4_card_products', function (Blueprint $table) {
-            $table->integer("id")->primary()->unsigned(); // equals to remote id
-            $table->integer("like4_card_category_id")->unsigned();
+            $table->unsignedBigInteger("id")->primary(); // equals to remote id
+            $table->unsignedBigInteger("like4_card_category_id");
             $table->string("name");
             $table->integer("price");
             $table->integer("sell_price");
@@ -25,10 +25,6 @@ class CreateLike4CardProductsTable extends Migration
             $table->integer("vat_percentage");
             $table->json("optional")->nullable();
             $table->timestamps();
-        });
-
-        Schema::table('like4_card_products', function (Blueprint $table) {
-            $table->foreign('like4_card_category_id')->references('id')->on('categories');
         });
     }
 

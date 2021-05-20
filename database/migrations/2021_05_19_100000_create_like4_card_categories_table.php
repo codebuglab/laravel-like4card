@@ -14,8 +14,8 @@ class CreateLike4CardCategoriesTable extends Migration
     public function up()
     {
         Schema::create('like4_card_categories', function (Blueprint $table) {
-            $table->integer("id")->primary()->unsigned(); // equals to remote id
-            $table->integer("parent_id")->nullable()->unsigned();
+            $table->unsignedBigInteger("id")->primary(); // equals to remote id
+            $table->unsignedBigInteger("parent_id")->nullable();
             $table->string("name");
             $table->string("image");
             $table->timestamps();
