@@ -17,33 +17,33 @@ class Like4CardAPITest extends TestCase
     {
         $response = $this->like4Card::categories();
 
-        $this->assertCount(1, $response->data);
-        $this->assertEquals("iTunes", $response->data[0]->categoryName);
-        $this->assertCount(1, $response->data[0]->childs);
+        $this->assertCount(1, $response);
+        $this->assertEquals("iTunes", $response[0]->categoryName);
+        $this->assertCount(1, $response[0]->childs);
     }
 
     public function test_it_gets_products_by_ids()
     {
         $response = $this->like4Card::products([693]);
 
-        $this->assertCount(1, $response->data);
-        $this->assertEquals("mobilyTest", $response->data[0]->productName);
+        $this->assertCount(1, $response);
+        $this->assertEquals("mobilyTest", $response[0]->productName);
     }
 
     public function test_it_gets_categories_by_category_id()
     {
         $response = $this->like4Card::getProductsByCategoryId(267);
 
-        $this->assertCount(1, $response->data);
-        $this->assertEquals("mobilyTest", $response->data[0]->productName);
+        $this->assertCount(1, $response);
+        $this->assertEquals("mobilyTest", $response[0]->productName);
     }
 
     public function test_it_gets_orders()
     {
         $response = $this->like4Card::orders();
 
-        $this->assertCount(1, $response->data);
-        $this->assertEquals(12637610, $response->data[0]->orderNumber);
+        $this->assertCount(1, $response);
+        $this->assertEquals(12637610, $response[0]->orderNumber);
     }
 
     public function test_it_gets_single_order_details()

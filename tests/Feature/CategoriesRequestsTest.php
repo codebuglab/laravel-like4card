@@ -11,9 +11,9 @@ class CategoriesRequestsTest extends TestCase
     {
         $categories = $this->like4Card::categories();
 
-        $this->assertCount(1, $categories->data);
+        $this->assertCount(1, $categories);
 
-        $category = $categories->data[0];
+        $category = $categories[0];
 
         Category::create([
             'name' => $category->categoryName,
@@ -31,9 +31,9 @@ class CategoriesRequestsTest extends TestCase
 
         $categories = $this->like4Card::categories();
 
-        $this->assertCount(1, $categories->data);
+        $this->assertCount(1, $categories);
 
-        $category = $categories->data[0];
+        $category = $categories[0];
 
         Category::create([
             'id' => $category->id,

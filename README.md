@@ -86,12 +86,15 @@ Operation to get all categories available for this merchant.
 $response = Like4Card::categories();
 ```
 
-`$response` is an Object with the following parameters
+`$response` is an **Array** with the following parameters
 
-| Parameter | Description                                                                                                                                                                                                                                                                                                   |
-| :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| response  | 1 for success, 0 for failure                                                                                                                                                                                                                                                                                  |
-| data      | array of objects, each object represents a category, and every category have a Parameter children that represents an array of subcategories. In case children was empty that means this category doesn't have any subcategories, and the merchant can get products of this category immediately using its id. |
+| Parameter        | Description                                                 |
+| :--------------- | :---------------------------------------------------------- |
+| id               | -                                                           |
+| categoryParentId | -                                                           |
+| categoryName     | -                                                           |
+| amazonImage      | -                                                           |
+| childs           | Array of sub-categories with same parent category structure |
 
 
 ### Products by products ids
@@ -105,22 +108,20 @@ $product_ids = [1, 2, 3]; // required products ids
 $response = Like4Card::products($product_ids);
 ```
 
-`$response` is an Object with the following parameters
-
-| Parameter | Description                                        |
-| :-------- | :------------------------------------------------- |
-| response  | 1 for success, 0 for failure                       |
-| data      | array of objects, each object represents a product |
-
-**Every product has**
+`$response` is an **array**. Each element is an object with the following parameters
 
 | Parameter             | Description                                                                        |
 | :-------------------- | :--------------------------------------------------------------------------------- |
+| productId             | -                                                                                  |
+| productName           | -                                                                                  |
+| productImage          | -                                                                                  |
+| productCurrency       | -                                                                                  |
 | productPrice          | that represents the product price including vat that the merchant paid for product |
 | sellPrice             | that represents the price the customer pays for the product to the merchant.       |
 | available             | determines if stock for this product is available or not.                          |
 | optionalFieldsExist   | 1 optional fields required, 0 there are no required optional fields.               |
 | productOptionalFields | array of optional fields where                                                     |
+| vatPercentage         | -                                                                                  |
 
 **Each optional field has**
 
@@ -144,12 +145,33 @@ $category_id = 1;
 $response = Like4Card::getProductsByCategoryId($category_id);
 ```
 
-`$response` is an Object with the following parameters
+`$response` is an **array**. Each element is an object with the following parameters
 
-| Parameter | Description                                        |
-| :-------- | :------------------------------------------------- |
-| response  | 1 for success, 0 for failure                       |
-| data      | array of objects, each object represents a product |
+| Parameter             | Description                                                                        |
+| :-------------------- | :--------------------------------------------------------------------------------- |
+| productId             | -                                                                                  |
+| productName           | -                                                                                  |
+| productImage          | -                                                                                  |
+| productCurrency       | -                                                                                  |
+| productPrice          | that represents the product price including vat that the merchant paid for product |
+| sellPrice             | that represents the price the customer pays for the product to the merchant.       |
+| available             | determines if stock for this product is available or not.                          |
+| optionalFieldsExist   | 1 optional fields required, 0 there are no required optional fields.               |
+| productOptionalFields | array of optional fields where                                                     |
+| vatPercentage         | -                                                                                  |
+
+**Each optional field has**
+
+| Parameter    | Description                                                           |
+| :----------- | :-------------------------------------------------------------------- |
+| id           | identifier of the optional field                                      |
+| required     | '1' means it's required, '0' means it's optional and not required     |
+| defaultValue | default value for this field                                          |
+| hint         | placeholder for this field                                            |
+| label        | label displayed on top of this field on UI                            |
+| fieldTypeId  | 1 plaintext ,7 email address, 10 phone number ,other number plaintext |
+| fieldCode    |                                                                       |
+| options      | array of choices in case option is multi choice field                 |
 
 ### Get all orders
 
@@ -175,12 +197,14 @@ $response = Like4Card::orders($options);
 
 `$response` is an Object with the following parameters
 
-| Parameter | Description                               |
-| :-------- | :---------------------------------------- |
-| response  | 1 for success, 0 for failure              |
-| data      | array of objects(each represent an order) |
-
-> each order object has orderFinalTotal which represent the price the merchant will pay for LikeCard for this order
+| Parameter          | Description                                                           |
+| :----------------- | :-------------------------------------------------------------------- |
+| orderNumber        | -                                                                     |
+| orderFinalTotal    | represent the price the merchant will pay for LikeCard for this order |
+| currencySymbol     | -                                                                     |
+| orderCreateDate    | -                                                                     |
+| orderCurrentStatus | -                                                                     |
+| orderPaymentMethod | -                                                                     |
 
 ### Get an order info
 

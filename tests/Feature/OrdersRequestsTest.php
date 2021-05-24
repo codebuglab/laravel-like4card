@@ -12,9 +12,9 @@ class OrdersRequestsTest extends TestCase
     {
         $orders = $this->like4Card::orders();
 
-        $this->assertCount(1, $orders->data);
+        $this->assertCount(1, $orders);
 
-        $order = $orders->data[0];
+        $order = $orders[0];
 
         Order::create([
             "order_number" => $order->orderNumber,

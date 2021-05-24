@@ -4,7 +4,6 @@ namespace CodeBugLab\Like4Card\Tests\Feature;
 
 use CodeBugLab\Like4Card\Tests\TestCase;
 use CodeBugLab\Like4Card\Models\Like4CardProduct as Product;
-use CodeBugLab\Like4Card\Models\Like4CardCategory as Category;
 
 class ProductsRequestsTest extends TestCase
 {
@@ -12,9 +11,9 @@ class ProductsRequestsTest extends TestCase
     {
         $products = $this->like4Card::products([1]);
 
-        $this->assertCount(1, $products->data);
+        $this->assertCount(1, $products);
 
-        $product = $products->data[0];
+        $product = $products[0];
 
         Product::create([
             "id" => $product->productId,

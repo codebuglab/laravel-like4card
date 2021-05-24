@@ -98,7 +98,7 @@ class Like4CardAPI implements Like4CardInterface
     {
         return self::cURL(
             "categories"
-        );
+        )->data;
     }
 
     /**
@@ -114,7 +114,7 @@ class Like4CardAPI implements Like4CardInterface
             [
                 "ids[]" => implode(",", $ids),
             ]
-        );
+        )->data;
     }
 
     /**
@@ -130,7 +130,7 @@ class Like4CardAPI implements Like4CardInterface
             [
                 "categoryId" => $category_id,
             ]
-        );
+        )->data;
     }
 
     /**
@@ -144,7 +144,7 @@ class Like4CardAPI implements Like4CardInterface
         return self::cURL(
             "orders",
             $options
-        );
+        )->data;
     }
 
     /**

@@ -36,7 +36,7 @@ class Like4CardAPIMock implements Like4CardInterface
                     ]
                 }
             ]
-        }');
+        }')->data;
     }
 
     public static function products(array $ids)
@@ -70,7 +70,7 @@ class Like4CardAPIMock implements Like4CardInterface
                     "vatPercentage": 0
                 }
             ]
-        }');
+        }')->data;
     }
 
     public static function getProductsByCategoryId(int $category_id)
@@ -104,7 +104,7 @@ class Like4CardAPIMock implements Like4CardInterface
                     "vatPercentage": 0
                 }
             ]
-        }');
+        }')->data;
     }
 
     public static function orders($options = [])
@@ -121,7 +121,7 @@ class Like4CardAPIMock implements Like4CardInterface
                     "orderPaymentMethod": "Pocket"
                 }
             ]
-        }');
+        }')->data;
     }
 
     public static function order(int $id)
