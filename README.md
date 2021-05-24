@@ -110,6 +110,8 @@ $response = Like4Card::products($product_ids);
 
 `$response` is an **array**. Each element is an object with the following parameters
 
+> When no products found: `$response` is a `string` with error message
+
 | Parameter             | Description                                                                        |
 | :-------------------- | :--------------------------------------------------------------------------------- |
 | productId             | -                                                                                  |
@@ -145,7 +147,9 @@ $category_id = 1;
 $response = Like4Card::getProductsByCategoryId($category_id);
 ```
 
-`$response` is an **array**. Each element is an object with the following parameters
+`$response` is an **array**. Each element is an object with the following parameters.
+
+> When no products found: `$response` is a `string` with error message
 
 | Parameter             | Description                                                                        |
 | :-------------------- | :--------------------------------------------------------------------------------- |

@@ -33,4 +33,12 @@ class ProductsRequestsTest extends TestCase
             "name" => "mobilyTest",
         ]);
     }
+
+    public function test_it_returns_error_message_if_products_not_found()
+    {
+        $products = $this->like4Card::products();
+
+        $this->assertFalse(isset($products->data));
+        $this->assertEquals("No available products", $products->message);
+    }
 }

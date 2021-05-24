@@ -109,12 +109,12 @@ class Like4CardAPI implements Like4CardInterface
      */
     public static function products(array $ids)
     {
-        return self::cURL(
+        $request = self::cURL(
             "products",
-            [
-                "ids[]" => implode(",", $ids),
-            ]
-        )->data;
+            ["ids[]" => implode(",", $ids)]
+        );
+
+        return isset($request->data) ? $request->data : $request->message;
     }
 
     /**
@@ -125,12 +125,12 @@ class Like4CardAPI implements Like4CardInterface
      */
     public static function getProductsByCategoryId(int $category_id)
     {
-        return self::cURL(
+        $request = self::cURL(
             "products",
-            [
-                "categoryId" => $category_id,
-            ]
-        )->data;
+            ["categoryId" => $category_id]
+        );
+
+        return isset($request->data) ? $request->data : $request->message;
     }
 
     /**

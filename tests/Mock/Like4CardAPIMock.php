@@ -39,8 +39,15 @@ class Like4CardAPIMock implements Like4CardInterface
         }')->data;
     }
 
-    public static function products(array $ids)
+    public static function products(array $ids = null)
     {
+        if (!$ids) {
+            return json_decode('{
+                "response": 0,
+                "message": "No available products"
+            }');
+        }
+
         return json_decode('{
             "response": 1,
             "data": [
