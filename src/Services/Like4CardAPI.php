@@ -9,8 +9,11 @@
 
 namespace CodeBugLab\Like4Card\Services;
 
+use Exception;
 use Illuminate\Support\Carbon;
 use CodeBugLab\Like4Card\Contracts\Like4CardInterface;
+use CodeBugLab\Like4Card\Exceptions\ProductsNotFoundException;
+use CodeBugLab\Like4Card\Exceptions\WrongCredentialsException;
 
 class Like4CardAPI implements Like4CardInterface
 {
@@ -30,8 +33,31 @@ class Like4CardAPI implements Like4CardInterface
      */
     private static function cURL($url, $json = [])
     {
-        dd('there');
+        $response = self::executeCURL($url, $json);
 
+        if ($response->response > 0) {
+            return $response;
+        }
+
+        switch (optional($response)->message) {
+            case "Incorrect Login - invalid email or password":
+                throw new WrongCredentialsException($response->message);
+            case "No available products":
+                throw new ProductsNotFoundException($response->message);
+            default:
+                throw new Exception(optional($response)->message ?? "Unknown error");
+        }
+    }
+
+    /**
+     * Prepare CURL options before execution
+     *
+     * @param string $url
+     * @param array $json
+     * @return object
+     */
+    private static function executeCURL(string $url, array $json)
+    {
         $ch = curl_init();
 
         $headers = array();
@@ -93,8 +119,10 @@ class Like4CardAPI implements Like4CardInterface
      */
     public static function categories()
     {
-        return self::cURL(
-            "categories"
+        return optional(
+            self::cURL(
+                "categories"
+            )
         )->data;
     }
 
@@ -106,12 +134,14 @@ class Like4CardAPI implements Like4CardInterface
      */
     public static function products(array $ids)
     {
-        $request = self::cURL(
-            "products",
-            ["ids[]" => implode(",", $ids)]
-        );
-
-        return isset($request->data) ? $request->data : $request->message;
+        return optional(
+            self::cURL(
+                "products",
+                [
+                    "ids[]" => implode(",", $ids)
+                ]
+            )
+        )->data;
     }
 
     /**
@@ -122,12 +152,12 @@ class Like4CardAPI implements Like4CardInterface
      */
     public static function getProductsByCategoryId(int $category_id)
     {
-        $request = self::cURL(
-            "products",
-            ["categoryId" => $category_id]
-        );
-
-        return isset($request->data) ? $request->data : $request->message;
+        return optional(
+            self::cURL(
+                "products",
+                ["categoryId" => $category_id]
+            )
+        )->data;
     }
 
     /**
@@ -138,9 +168,11 @@ class Like4CardAPI implements Like4CardInterface
      */
     public static function orders(array $options = [])
     {
-        return self::cURL(
-            "orders",
-            $options
+        return optional(
+            self::cURL(
+                "orders",
+                $options
+            )
         )->data;
     }
 
@@ -171,7 +203,7 @@ class Like4CardAPI implements Like4CardInterface
     {
         $time = now();
 
-        return self::cURL(
+        $order = self::cURL(
             "create_order",
             [
                 'referenceId' => $local_id,
@@ -181,6 +213,10 @@ class Like4CardAPI implements Like4CardInterface
                 'hash' => self::generateHash($time)
             ]
         );
+
+        logger($order);
+
+        return $order;
     }
 
     /**

@@ -11,7 +11,7 @@ class Like4CardAPIMock extends Like4CardAPI
 {
     private static function cURL($url, $json = [])
     {
-        $response = self::prepareCURL($url, $json);
+        $response = self::executeCURL($url, $json);
 
         if ($response->response > 0) {
             return $response;
@@ -27,7 +27,7 @@ class Like4CardAPIMock extends Like4CardAPI
         }
     }
 
-    private static function prepareCURL($url, $json)
+    private static function executeCURL($url, $json)
     {
         return json_decode(
             file_get_contents(
