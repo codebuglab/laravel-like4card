@@ -2,10 +2,19 @@
 
 namespace CodeBugLab\Like4Card\Tests\Unit\Services;
 
+use CodeBugLab\Like4Card\Exceptions\WrongCredentialsException;
 use CodeBugLab\Like4Card\Tests\TestCase;
 
 class Like4CardAPITest extends TestCase
 {
+    public function test_it_throws_an_exception_with_wrong_credentials()
+    {
+        $this->expectException(WrongCredentialsException::class);
+        $this->expectExceptionMessage("Incorrect Login - invalid email or password");
+
+        $this->like4Card::exceptionTestCase('wrong_credentials');
+    }
+
     public function test_can_get_balance()
     {
         $response = $this->like4Card::balance();

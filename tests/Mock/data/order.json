@@ -1,0 +1,20 @@
+{
+  "response": 1,
+  "orderNumber": "12319604",
+  "orderFinalTotal": "100",
+  "currencySymbol": "SAR",
+  "orderCreateDate": "2019-12-25 06:57",
+  "orderPaymentMethod": "Pocket",
+  "orderCurrentStatus": "completed",
+  "serials": [
+    {
+      "productId": "376",
+      "productName": "test-itunes1",
+      "productImage": "https://likecard-space.fra1.digitaloceanspaces.com/products/4b09d-5656b-buy-one-get-one-2.png",
+      "serialId": "11562121",
+      "serialCode": "U0IycUdUWktsL25UaGhOc2JBMmtTUT09",
+      "serialNumber": "",
+      "validTo": "25/03/2020"
+    }
+  ]
+}

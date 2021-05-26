@@ -1,0 +1,30 @@
+{
+  "response": 1,
+  "data": [
+    {
+      "productId": "693",
+      "categoryId": "267",
+      "productName": "mobilyTest",
+      "productPrice": 0.02,
+      "productImage": "https://likecard-space.fra1.digitaloceanspaces.com/products/066ce-x50.jpg",
+      "productCurrency": "SAR",
+      "optionalFieldsExist": 1,
+      "productOptionalFields": [
+        {
+          "id": 332,
+          "required": "1",
+          "defaultValue": "",
+          "hint": "USER ID",
+          "label": "USER ID",
+          "fieldTypeId": "10",
+          "fieldCode": "userid",
+          "optionalFieldID": "14",
+          "options": []
+        }
+      ],
+      "sellPrice": "0.02",
+      "available": true,
+      "vatPercentage": 0
+    }
+  ]
+}

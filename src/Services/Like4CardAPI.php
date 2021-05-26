@@ -21,11 +21,6 @@ class Like4CardAPI implements Like4CardInterface
      */
     protected const API_URL = "https://taxes.like4app.com/online/";
 
-    function __construct()
-    {
-        //
-    }
-
     /**
      * Send POST cURL request to like4card server.
      *
@@ -33,8 +28,10 @@ class Like4CardAPI implements Like4CardInterface
      * @param  array  $json
      * @return object
      */
-    protected static function cURL($url, $json = [])
+    private static function cURL($url, $json = [])
     {
+        dd('there');
+
         $ch = curl_init();
 
         $headers = array();

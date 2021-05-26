@@ -1,0 +1,19 @@
+{
+  "response": 1,
+  "data": [
+    {
+      "id": "59",
+      "categoryParentId": "0",
+      "categoryName": "iTunes",
+      "amazonImage": "https://likecard-space.fra1.digitaloceanspaces.com/categories/f33b9-it.png",
+      "childs": [
+        {
+          "id": "151",
+          "categoryParentId": "59",
+          "categoryName": "British iTunes",
+          "amazonImage": "https://likecard-space.fra1.digitaloceanspaces.com/categories/bb24a-bcd74-netherland.jpg"
+        }
+      ]
+    }
+  ]
+}

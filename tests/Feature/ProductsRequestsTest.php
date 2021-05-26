@@ -2,6 +2,7 @@
 
 namespace CodeBugLab\Like4Card\Tests\Feature;
 
+use CodeBugLab\Like4Card\Exceptions\ProductsNotFoundException;
 use CodeBugLab\Like4Card\Tests\TestCase;
 use CodeBugLab\Like4Card\Models\Like4CardProduct as Product;
 
@@ -34,11 +35,11 @@ class ProductsRequestsTest extends TestCase
         ]);
     }
 
-    public function test_it_returns_error_message_if_products_not_found()
+    public function test_it_throws_an_exception_when_no_products_found()
     {
-        $products = $this->like4Card::products();
+        $this->expectException(ProductsNotFoundException::class);
+        $this->expectExceptionMessage("No available products");
 
-        $this->assertFalse(isset($products->data));
-        $this->assertEquals("No available products", $products->message);
+        $this->like4Card::exceptionTestCase('no_products');
     }
 }

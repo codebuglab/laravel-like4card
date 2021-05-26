@@ -14,6 +14,11 @@ Integrate [Like4Card](http://like4card.com/) api with Laravel.
   - [Get all orders](#get-all-orders)
   - [Get an order info](#get-an-order-info)
   - [Create new order](#create-new-order)
+- [API Exceptions](#api-exceptions)
+  - [Wrong credentials](#wrong-credentials)
+    - [example](#example)
+  - [Products not available](#products-not-available)
+    - [example](#example-1)
 - [License](#license)
 
 ## Installation
@@ -256,6 +261,38 @@ $response = Like4Card::createOrder($product_id, $local_id);
 | Parameter | Description                  |
 | :-------- | :--------------------------- |
 | response  | 1 for success, 0 for failure |
+
+## API Exceptions
+
+If the API response is **0**, the service throw an exception. It could be on of following
+
+### Wrong credentials
+
+It been thrown if you enter wrong deviceId, username, password or securityCode.
+
+#### example
+
+```php
+  try {
+    $response = Like4Card::balance();
+  } catch (\CodeBugLab\Like4Card\Exceptions\WrongCredentialsException $ex) {
+    echo $ex->getMessage(); // "Incorrect Login - invalid email or password"
+  }
+```
+
+### Products not available
+
+It's been thrown if no products found with given **category id** or **products ids array**
+
+#### example
+
+```php
+  try {
+    $data = Like4Card::getProductsByCategoryId(1);
+  } catch (\CodeBugLab\Like4Card\Exceptions\ProductsNotFoundException $ex) {
+    echo $ex->getMessage(); // "No available products"
+  }
+```
 
 ## License
 
