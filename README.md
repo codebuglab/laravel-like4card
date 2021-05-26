@@ -264,7 +264,7 @@ $response = Like4Card::createOrder($product_id, $local_id);
 
 ## API Exceptions
 
-If the API response is **0**, the service throw an exception. It could be on of following
+If the API response = **0**, the service throws an exception. It could be one of the following exceptions
 
 ### Wrong credentials
 
