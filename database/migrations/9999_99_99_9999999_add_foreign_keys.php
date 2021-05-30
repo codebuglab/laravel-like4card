@@ -14,7 +14,7 @@ class AddForeignKeys extends Migration
     public function up()
     {
         Schema::table('like4_card_products', function (Blueprint $table) {
-            $table->foreign('like4_card_category_id')->references('id')->on('categories');
+            $table->foreign('like4_card_category_id')->references('id')->on('like4_card_categories');
         });
 
         Schema::table('like4_card_serials', function (Blueprint $table) {
