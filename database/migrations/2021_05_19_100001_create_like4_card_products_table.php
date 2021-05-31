@@ -15,14 +15,14 @@ class CreateLike4CardProductsTable extends Migration
     {
         Schema::create('like4_card_products', function (Blueprint $table) {
             $table->unsignedBigInteger("id")->primary(); // equals to remote id
-            $table->unsignedBigInteger("like4_card_category_id");
-            $table->string("name");
-            $table->integer("price");
-            $table->integer("sell_price");
-            $table->string("image");
-            $table->string("currency");
-            $table->boolean("available");
-            $table->integer("vat_percentage");
+            $table->unsignedBigInteger("like4_card_category_id")->nullable();
+            $table->string("name")->nullable();
+            $table->integer("price")->nullable();
+            $table->integer("sell_price")->nullable();
+            $table->string("image")->nullable();
+            $table->string("currency")->nullable();
+            $table->boolean("available")->nullable();
+            $table->integer("vat_percentage")->nullable();
             $table->json("optional")->nullable();
             $table->timestamps();
         });
