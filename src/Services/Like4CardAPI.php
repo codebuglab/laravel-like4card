@@ -35,7 +35,7 @@ class Like4CardAPI implements Like4CardInterface
     {
         $response = self::executeCURL($url, $json);
 
-        if ($response->response > 0) {
+        if (isset($response->response) && $response->response > 0) {
             return $response;
         }
 
