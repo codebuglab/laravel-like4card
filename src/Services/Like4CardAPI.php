@@ -11,6 +11,7 @@ namespace CodeBugLab\Like4Card\Services;
 
 use Exception;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Log;
 use CodeBugLab\Like4Card\Contracts\Like4CardInterface;
 use CodeBugLab\Like4Card\Exceptions\ProductsNotFoundException;
 use CodeBugLab\Like4Card\Exceptions\WrongCredentialsException;
@@ -214,7 +215,7 @@ class Like4CardAPI implements Like4CardInterface
             ]
         );
 
-        logger($order);
+        Log::info([$order]);
 
         return $order;
     }
