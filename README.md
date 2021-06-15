@@ -2,6 +2,8 @@
 
 Integrate [Like4Card](http://like4card.com/) api with Laravel.
 
+![Laravel Like4Card](banner.png)
+
 ## Table of Contents <!-- omit in toc -->
 
 - [Installation](#installation)
@@ -117,18 +119,22 @@ $response = Like4Card::products($product_ids);
 
 > When no products found: `$response` is a `string` with error message
 
-| Parameter             | Description                                                                        |
-| :-------------------- | :--------------------------------------------------------------------------------- |
-| productId             | -                                                                                  |
-| productName           | -                                                                                  |
-| productImage          | -                                                                                  |
-| productCurrency       | -                                                                                  |
-| productPrice          | that represents the product price including vat that the merchant paid for product |
-| sellPrice             | that represents the price the customer pays for the product to the merchant.       |
-| available             | determines if stock for this product is available or not.                          |
-| optionalFieldsExist   | 1 optional fields required, 0 there are no required optional fields.               |
-| productOptionalFields | array of optional fields where                                                     |
-| vatPercentage         | -                                                                                  |
+| Parameter              | Description                                                                        |
+| :--------------------- | :--------------------------------------------------------------------------------- |
+| productId              | -                                                                                  |
+| categoryId             | -                                                                                  |
+| productName            | -                                                                                  |
+| productImage           | -                                                                                  |
+| productCurrency        | -                                                                                  |
+| productPrice           | that represents the product price including vat that the merchant paid for product |
+| productPriceWithoutVat | -                                                                                  |
+| sellPrice              | that represents the price the customer pays for the product to the merchant.       |
+| sellPriceWithoutVat    | -                                                                                  |
+| available              | determines if stock for this product is available or not.                          |
+| optionalFieldsExist    | 1 optional fields required, 0 there are no required optional fields.               |
+| productOptionalFields  | array of optional fields where                                                     |
+| vatAmount              | -                                                                                  |
+| vatPercentage          | -                                                                                  |
 
 **Each optional field has**
 
@@ -156,18 +162,22 @@ $response = Like4Card::getProductsByCategoryId($category_id);
 
 > When no products found: `$response` is a `string` with error message
 
-| Parameter             | Description                                                                        |
-| :-------------------- | :--------------------------------------------------------------------------------- |
-| productId             | -                                                                                  |
-| productName           | -                                                                                  |
-| productImage          | -                                                                                  |
-| productCurrency       | -                                                                                  |
-| productPrice          | that represents the product price including vat that the merchant paid for product |
-| sellPrice             | that represents the price the customer pays for the product to the merchant.       |
-| available             | determines if stock for this product is available or not.                          |
-| optionalFieldsExist   | 1 optional fields required, 0 there are no required optional fields.               |
-| productOptionalFields | array of optional fields where                                                     |
-| vatPercentage         | -                                                                                  |
+| Parameter              | Description                                                                        |
+| :--------------------- | :--------------------------------------------------------------------------------- |
+| productId              | -                                                                                  |
+| categoryId             | -                                                                                  |
+| productName            | -                                                                                  |
+| productImage           | -                                                                                  |
+| productCurrency        | -                                                                                  |
+| productPrice           | that represents the product price including vat that the merchant paid for product |
+| productPriceWithoutVat | -                                                                                  |
+| sellPrice              | that represents the price the customer pays for the product to the merchant.       |
+| sellPriceWithoutVat    | -                                                                                  |
+| available              | determines if stock for this product is available or not.                          |
+| optionalFieldsExist    | 1 optional fields required, 0 there are no required optional fields.               |
+| productOptionalFields  | array of optional fields where                                                     |
+| vatAmount              | -                                                                                  |
+| vatPercentage          | -                                                                                  |
 
 **Each optional field has**
 

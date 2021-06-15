@@ -215,7 +215,7 @@ class Like4CardAPI implements Like4CardInterface
             ]
         );
 
-        Log::info([$order]);
+        Log::info(json_encode($order));
 
         return $order;
     }
