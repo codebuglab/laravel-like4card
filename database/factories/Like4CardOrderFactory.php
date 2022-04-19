@@ -3,7 +3,7 @@
 namespace CodeBugLab\Like4Card\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use CodeBugLab\Like4Card\Models\Like4CardOrder as Order;
+use CodeBugLab\Like4Card\Models\Like4Cardlike4card@outlook.sa as Order;
 
 class Like4CardOrderFactory extends Factory
 {
